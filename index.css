@@ -1,0 +1,11 @@
+div {
+    border-width:2px;
+    border-style:solid;
+    border-color:red;
+    height: 75px;
+}
+
+.tile {
+    height: 75px;
+    width: 75px;
+}
