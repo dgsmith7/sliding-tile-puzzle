@@ -22,6 +22,10 @@ class Tile {
     isSolved() {
         return (this.currentPosit === this.solvedPosit);
     }
-}
 
-export {Tile};
+    displayState() {
+        document.getElementById(this.id).innerHTML = this.currentPosit;
+        console.log("Check " + this.id);
+    }
+
+}
