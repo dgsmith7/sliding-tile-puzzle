@@ -3,7 +3,7 @@
     let game = new Game();
     let active = true;
 
-    while (active != false) {
+ //   while (active != false) {
         switch (gameState) {
             case 0:
                 // new game
@@ -32,6 +32,6 @@
                 break;
 
         }
-    }
+ //   }
     console.log("Exit");//window.close();
 }());
