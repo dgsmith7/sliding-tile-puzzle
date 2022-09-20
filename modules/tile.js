@@ -1,16 +1,14 @@
 class Tile {
     id;
-    tileType;
     solvedPosit;
     currentPosit;
     solved;
 
-    constructor(_id, _tileType, _solvedPosit, _currentPosit) {
+    constructor(_id, _solvedPosit, _currentPosit) {
         this.id = _id;
-        this.tileType = _tileType;
         this.solvedPosit = _solvedPosit;
         this.currentPosit = _currentPosit;
-        this.solved = _solvedPosit == _currentPosit;
+        this.solved = (_solvedPosit === _currentPosit);
     }
 
     setCurrent(_newPosit) {
@@ -22,6 +20,8 @@ class Tile {
     }
 
     isSolved() {
-        return this.currentPosit == this.solvedPosit;
+        return (this.currentPosit === this.solvedPosit);
     }
 }
+
+export {Tile};
