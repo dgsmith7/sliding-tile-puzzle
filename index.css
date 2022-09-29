@@ -1,11 +1,80 @@
-div {
-    border-width:2px;
-    border-style:solid;
-    border-color:red;
-    height: 75px;
+html {
+    box-sizing: border-box;
 }
 
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: rgb(230, 195, 130);  /*fallback*/
+    background-image: linear-gradient(to bottom right, rgb(230, 195, 130), rgb(195, 125, 70));
+}
+
+main {
+    aspect-ratio: 1.25;
+    display: grid;
+    grid-template-columns: repeat(6, 15%);
+    grid-template-rows: repeat(8, 12.5%);
+    grid-row-gap: 2%;
+}
+
+#titleArea {
+    display: grid;
+    grid-column-start: 2;
+    grid-column-end: 7;
+    grid-row-start: 1;
+    text-align: center;
+    margin: 2%;
+    color: rgb(80, 115, 145);
+    background-color: rgb(230, 195, 130);
+    background-color: rgb(230, 195, 130, 0.0);
+    text-align: center;
+    align-content: center;
+}
+
+#board {
+    aspect-ratio: 1;
+    grid-column-start: 3;
+    grid-column-end: 6;
+    grid-row-start: 2;
+    grid-row-end: 5;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+}
+
+#infoArea {
+    display: grid;
+    grid-template-columns: repeat(3, 30%);
+    grid-column-gap: 5%;
+    grid-column-start: 3;
+    grid-column-end: 6;
+    grid-row-start: 6;
+}
+
+/*div {*/
+/*    border-width:2px;*/
+/*    border-style:solid;*/
+/*    border-color:red;*/
+/*}*/
+
 .tile {
-    height: 75px;
-    width: 75px;
+    display: grid;
+    color: whitesmoke;
+    background-color: rgb(110, 190, 175);
+    border-radius: 5%;
+    margin: 3%;
+    text-align: center;
+    align-content: center;
+}
+
+.button {
+    display: grid;
+    color: whitesmoke;
+    background-color: rgb(80, 115, 145);
+    border-radius: 5%;
+    margin: 3%;
+    text-align: center;
+    align-content: center;
 }

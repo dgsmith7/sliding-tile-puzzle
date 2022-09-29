@@ -3,44 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <title>Sliding Tile Puzzle</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-<div class="row"></div>
-<div class="row">
-    <div class="col-md-4"></div>
-        <div id="topLeft" class="col-md-1 tile">X</div>
-        <div id="top1" class="col-md-1 tile">X</div>
-        <div id="top2" class="col-md-1 tile">X</div>
-        <div id="topRight" class="col-md-1 tile">X</div>
-   <div class="col-md-4"></div>
-</div>
-<div class="row">
-    <div class="col-md-4"></div>
-    <div id="left1" class="col-md-1 tile">X</div>
-    <div id="ctl" class="col-md-1 tile">X</div>
-    <div id="ctr" class="col-md-1 tile">X</div>
-    <div id="right1" class="col-md-1 tile">X</div>
-    <div class="col-md-4"></div>
-</div>
-<div class="row">
-    <div class="col-md-4"></div>
-    <div id="left2" class="col-md-1 tile">X</div>
-    <div id="cbl" class="col-md-1 tile">X</div>
-    <div id="cbr" class="col-md-1 tile">X</div>
-    <div id="right2" class="col-md-1 tile">X</div>
-    <div class="col-md-4"></div>
-</div>
-<div class="row">
-    <div class="col-md-4"></div>
-    <div id="bottomLeft" class="col-md-1 tile">X</div>
-    <div id="bot1" class="col-md-1 tile">X</div>
-    <div id="bot2" class="col-md-1 tile">X</div>
-    <div id="bottomRight" class="col-md-1 tile">X</div>
-    <div class="col-md-4"></div>
-</div>
-<div class="row"></div>
+<main>
+    <div id="titleArea">
+        <h1>Sliding Tile Puzzle</h1>
+    </div>
+    <div id="board">
+        <div id="topLeft" class="tile">X</div>
+        <div id="top1" class="tile">X</div>
+        <div id="top2" class="tile">X</div>
+        <div id="topRight" class="tile">X</div>
+        <div id="left1" class="tile">X</div>
+        <div id="ctl" class="tile">X</div>
+        <div id="ctr" class="tile">X</div>
+        <div id="right1" class="tile">X</div>
+        <div id="left2" class="tile">X</div>
+        <div id="cbl" class="tile">X</div>
+        <div id="cbr" class="tile">X</div>
+        <div id="right2" class="tile">X</div>
+        <div id="bottomLeft" class="tile">X</div>
+        <div id="bot1" class="tile">X</div>
+        <div id="bot2" class="tile">X</div>
+        <div id="bottomRight" class="tile">X</div>
+    </div>
+    <div id="infoArea">
+        <div id="moves" class="button">0</div>
+        <div id="best" class="button">9999</div>
+        <div id="reset" class="button">Reset Game</div>
+    </div>
+</main>
+
 <script src="./gameClass.js"></script>
 <script src="./tile.js"></script>
 <script src="./sliding-tile-puzzle.js"></script>
