@@ -25,10 +25,12 @@ class Tile {
 
     displayState() {
         let elem = document.getElementById(this.id);
-        console.log(this.currentPosit, typeof this.currentPosit);
         elem.innerHTML = this.currentPosit;
-        this.currentPosit === 0?elem.visibility = "hidden":elem.visibility="visible";
-        console.log("Check " + this.id);
+        if (elem.innerHTML == '0') {
+            elem.setAttribute("style", "visibility:hidden");
+        } else {
+            elem.setAttribute("style", "visibility: visible");
+        }
     }
 
 }

@@ -1,8 +1,32 @@
 (function() {
-    let gameState = 0;  //0 - Init,  1 - Play,  2 - Game Over,  3 - Splash Page
-    let game = new Game();
-    game.initTiles();
-    game.displayCurrentState();
 
+    let game = new Game();
+
+    function connectButtons() {
+        document.getElementById("topLeft").addEventListener("click", () => game.tryMove(1));
+        document.getElementById("top1").addEventListener("click", () => game.tryMove(2));
+        document.getElementById("top2").addEventListener("click", () => game.tryMove(3));
+        document.getElementById("topRight").addEventListener("click", () => game.tryMove(4));
+        document.getElementById("left1").addEventListener("click", () => game.tryMove(5));
+        document.getElementById("ctl").addEventListener("click", () => game.tryMove(6));
+        document.getElementById("ctr").addEventListener("click", () => game.tryMove(7));
+        document.getElementById("right1").addEventListener("click", () => game.tryMove(8));
+        document.getElementById("left2").addEventListener("click", () => game.tryMove(9));
+        document.getElementById("cbl").addEventListener("click", () => game.tryMove(10));
+        document.getElementById("cbr").addEventListener("click", () => game.tryMove(11));
+        document.getElementById("right2").addEventListener("click", () => game.tryMove(12));
+        document.getElementById("bottomLeft").addEventListener("click", () => game.tryMove(13));
+        document.getElementById("bot1").addEventListener("click", () => game.tryMove(14));
+        document.getElementById("bot2").addEventListener("click", () => game.tryMove(15));
+        document.getElementById("bottomRight").addEventListener("click", () => game.tryMove(16));
+    }
+
+    game.reset();
+    connectButtons();
+
+
+
+    game.displayCurrentState();
+    console.log(game.isSolved());
 
 }());
