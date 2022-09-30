@@ -19,6 +19,7 @@
         document.getElementById("bot1").addEventListener("click", () => game.tryMove(14));
         document.getElementById("bot2").addEventListener("click", () => game.tryMove(15));
         document.getElementById("bottomRight").addEventListener("click", () => game.tryMove(16));
+        document.getElementById("reset").addEventListener("click", () => game.reset());
     }
 
     game.reset();
