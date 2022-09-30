@@ -38,6 +38,7 @@ html {
 #infoArea {
     display: grid;
     grid-template-columns: repeat(3, 30%);
+    grid-template-rows: repeat(2, 100%);
     grid-column-gap: 5%;
     grid-column-start: 3;
     grid-column-end: 6;
@@ -50,6 +51,16 @@ main {
     grid-template-columns: repeat(6, 15%);
     grid-template-rows: repeat(8, 12.5%);
     grid-row-gap: 2%;
+}
+
+#messageArea {
+    display: grid;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    align-content: center;
+    text-align: center;
+    font-size: 2vw;
 }
 
 .tile {

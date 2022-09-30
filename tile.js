@@ -11,16 +11,12 @@ class Tile {
         this.solved = (_solvedPosit === _currentPosit);
     }
 
-    setCurrent(_newPosit) {
-        this.currentPosit = _newPosit;
-    }
-
-    getCurrentPosit() {
-        return this.currentPosit;
-    }
-
     isSolved() {
-        return (this.currentPosit === this.solvedPosit);
+        let comp = this.solvedPosit + 1;
+        if (comp === 16) {
+            comp = 0;
+        }
+        return (this.currentPosit === comp);
     }
 
     displayState() {

@@ -15,9 +15,10 @@ class Game {
     initTiles() {
         let id = ["topLeft", "top1", "top2", "topRight", "left1", "ctl", "ctr", "right1", "left2", "cbl", "cbr", "right2", "bottomLeft", "bot1", "bot2", "bottomRight"];
         let solvedIndex = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
-        // below:  shuffle array - //from https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
+        // next 2 lines:  shuffle array - //from https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
         let currentValue = [...solvedIndex];
         currentValue.sort(() => Math.random() - 0.5);
+        //currentValue = [1, 2, 3, 4, 5 ,6 , 7, 8, 9 ,10, 11, 12, 13, 0, 14, 15]; //test puzzle
         while (this.tiles.length > 0) {
             this.tiles.pop();
         }
@@ -25,7 +26,6 @@ class Game {
             let t = new Tile(id[i], Number(solvedIndex[i]), currentValue[i]);
             this.tiles.push(t);
         }
-        this.displayCurrentState();
     }
 
     displayCurrentState() {
@@ -33,6 +33,8 @@ class Game {
             element.displayState();
             console.log(element)
         });
+        document.getElementById("moves").innerHTML = `Moves<br/>${this.moves}`;
+        document.getElementById("best").innerHTML = `Best<br/>${this.best}`;
     }
 
     isSolved() {
@@ -57,90 +59,27 @@ class Game {
     }
 
     isValidMove(clicked, vacancy) {
-        console.log("You clicked " + clicked);
-        console.log("Vacancy at " + vacancy);
         let valid = true;
+        console.log("Checking move validity. ");
         switch (clicked) {
-            case 0:  {
-                valid = [1,4].includes(vacancy);
-                break;
-            }
-            case 1:   {
-                valid = [0, 2, 5].includes(vacancy);
-                break;
-            }
-            case 2:   {
-                valid = [1, 3, 6].includes(vacancy);
-                break;
-            }
-            case 3:   {
-                valid = [2, 7].includes(vacancy);
-                break;
-            }
-            case 4:   {
-                valid = [0, 5, 8].includes(vacancy);
-                break;
-            }
-            case 5:   {
-                valid = [1, 4, 6, 9].includes(vacancy);
-                break;
-            }
-            case 6:   {
-                valid = [2, 5, 7, 10].includes(vacancy);
-                break;
-            }
-            case 7:   {
-                valid = [3, 6, 11].includes(vacancy);
-                break;
-            }
-            case 8:   {
-                valid = [4, 9, 12].includes(vacancy);
-                break;
-            }
-            case 9:  {
-                valid = [5, 8, 10, 13].includes(vacancy);
-                break;
-            }
-            case 10:  {
-                valid = [6, 9, 11, 14].includes(vacancy);
-                break;
-            }
-            case 11:  {
-                valid = [7, 10, 15].includes(vacancy);
-                break;
-            }
-            case 12:  {
-                valid = [8, 13].includes(vacancy);
-                break;
-            }
-            case 13:  {
-                valid = [9, 12, 14].includes(vacancy);
-                break;
-            }
-            case 14:  {
-                valid = [10, 13, 15].includes(vacancy);
-                break;
-            }
-            case 15: {
-                valid = [11, 14].includes(vacancy);
-                break;
-            }
+            case 0: {return [1,4].includes(vacancy);}
+            case 1: {return [0, 2, 5].includes(vacancy);}
+            case 2: {return  [1, 3, 6].includes(vacancy);}
+            case 3: {return  [2, 7].includes(vacancy);}
+            case 4: {return [0, 5, 8].includes(vacancy);}
+            case 5: {return [1, 4, 6, 9].includes(vacancy);}
+            case 6: {return [2, 5, 7, 10].includes(vacancy);}
+            case 7: {return [3, 6, 11].includes(vacancy);}
+            case 8: {return [4, 9, 12].includes(vacancy);}
+            case 9: {return [5, 8, 10, 13].includes(vacancy);}
+            case 10: {return [6, 9, 11, 14].includes(vacancy);}
+            case 11: {return [7, 10, 15].includes(vacancy);}
+            case 12: {return [8, 13].includes(vacancy);}
+            case 13: {return [9, 12, 14].includes(vacancy);}
+            case 14: {return [10, 13, 15].includes(vacancy);}
+            case 15: {return [11, 14].includes(vacancy);}
+            default: {console.log("Invalid"); return false;}
          }
-      // if the clicked tile not next to vacancy valid = false;
-        console.log("Valid move? - " + valid);
-        return valid;
-    }
-
-    getVacancy() {
-        let which = 16;
-        for (let i = 0; i < 16; i++) {
-            console.log(this.tiles[i].currentPosit);
-            if (this.tiles[i].currentPosit === 0) {
-                which = i + 1;
-                console.log("which - " + which);
-            }
-        }
-        return which;
     }
 
     getTileIndex(faceVal) {
@@ -153,11 +92,9 @@ class Game {
         return which;
     }
 
-    swapTiles(clicked, vacancy) {  // tested
- //       clicked = this.getTileIndex(clicked);
+    swapTiles(clicked, vacancy) {
         console.log("swapping " + clicked + " and " + vacancy);
- //       vacancy = this.getTileIndex(vacancy);
-       let temp = this.tiles[clicked].currentPosit;
+        let temp = this.tiles[clicked].currentPosit;
         this.tiles[clicked].currentPosit = this.tiles[vacancy].currentPosit;
         this.tiles[vacancy].currentPosit = temp;
         this.moves++;
@@ -169,12 +106,23 @@ class Game {
         this.initTiles();
         this.solved = false;
         this.moves = 0;
+        document.getElementById("messageArea").innerHTML = "Click on tiles to arrange in numerical order";
+        this.displayCurrentState();
     }
 
     finish() {
-        console.log("Finished");
-        // congrats effect
-        // highs score stuff
+        console.log("Congrats.  You finished in " + this.moves + " moves.");
+        document.getElementById("messageArea").innerHTML = `Congrats.  You finished in ${this.moves} moves.`;
+        this.considerBestScore();
 
+    }
+
+    considerBestScore() {
+        if (this.moves < this.best) {
+            this.best = this.moves;
+            document.getElementById("messageArea").innerHTML += "<br/>Congrats.  You have a new best score.";
+
+        }
+        this.displayCurrentState();
     }
 }
