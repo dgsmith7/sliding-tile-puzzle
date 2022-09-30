@@ -51,6 +51,7 @@ main {
     grid-template-columns: repeat(6, 15%);
     grid-template-rows: repeat(8, 12.5%);
     grid-row-gap: 2%;
+    margin-top: 25px;
 }
 
 #messageArea {
@@ -73,7 +74,7 @@ main {
     align-content: center;
     border: 1px solid rgb(195, 125, 70);
     /*visibility: visible;*/
-    font-size: 5vw;
+    font-size: 3.5vw;
 }
 
 #titleArea {
