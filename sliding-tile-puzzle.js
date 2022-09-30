@@ -25,9 +25,4 @@
     game.reset();
     connectButtons();
 
-
-
-    game.displayCurrentState();
-    console.log(game.isSolved());
-
 }());

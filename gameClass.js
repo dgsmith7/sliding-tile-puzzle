@@ -59,7 +59,6 @@ class Game {
     }
 
     isValidMove(clicked, vacancy) {
-        let valid = true;
         console.log("Checking move validity. ");
         switch (clicked) {
             case 0: {return [1,4].includes(vacancy);}

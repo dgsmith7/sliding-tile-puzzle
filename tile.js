@@ -22,7 +22,7 @@ class Tile {
     displayState() {
         let elem = document.getElementById(this.id);
         elem.innerHTML = this.currentPosit;
-        if (elem.innerHTML == '0') {
+        if (elem.innerHTML === '0') {
             elem.setAttribute("style", "visibility:hidden");
         } else {
             elem.setAttribute("style", "visibility: visible");
