@@ -10,6 +10,7 @@ class Game {
         this.solved = false;
         this.moves = 0;
         this.best = 9999;
+        this.worst = 10000;   ////////
     }
 
     initTiles() {
