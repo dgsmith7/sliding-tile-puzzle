@@ -2,26 +2,37 @@
     box-sizing: inherit;
 }
 
+:root {
+    --aqua: rgb(110, 190, 175);
+    --blue: rgb(80, 115, 145);
+    --dark-brown: rgb(195, 125, 70);
+}
+
 html {
     box-sizing: border-box;
-    background-color: rgb(230, 195, 130);  /*fallback*/
-    background: linear-gradient(to bottom right, rgb(230, 195, 130), rgb(195, 125, 70)) no-repeat center center fixed;
+    background:
+            rgb(230, 195, 130)
+            linear-gradient(to bottom right, rgb(230, 195, 130), rgb(195, 125, 70))
+            no-repeat
+            fixed
+            center
+            center;
 }
 
 body {
     display: flex;
-    height: 95vh;
-    width: 58vh;
+    width: max(95vw, 576px);
+    height: max(95vh, 600px);
     font-family: 'Original Surfer', sans-serif;
     justify-content: center;
-    margin: 25px;
+    margin: 25px auto;
 }
 
 main {
     aspect-ratio: 4/7;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 16% 60% 10% 10%;
+    grid-template-rows: 12% 57% 10% 10%;
     margin: 0;
 }
 
@@ -30,12 +41,12 @@ main {
     grid-column-start: 1;
     grid-column-end: 5;
     grid-row-start: 1;
-    color: rgb(80, 115, 145);
+    color: var(--blue);
     border-radius: 13%;
     background-color: rgb(60, 140, 150, 0.1);
     text-align: center;
     align-content: center;
-    font-size: 3.25vw;
+    font-size: calc(15px + 0.390625vw);
 }
 
 #board {
@@ -53,12 +64,12 @@ main {
 .tile {
     display: grid;
     color: whitesmoke;
-    background-color: rgb(110, 190, 175);
+    background-color: var(--aqua);
     border-radius: 13%;
     text-align: center;
     align-content: center;
-    border: 1px solid rgb(195, 125, 70);
-    font-size: 7vw;
+    border: 1px solid var(--dark-brown);
+    font-size: calc(15px + 0.390625vw);
 }
 
 #infoArea {
@@ -74,12 +85,12 @@ main {
 .button {
     display: grid;
     color: whitesmoke;
-    background-color: rgb(80, 115, 145);
+    background-color: var(--blue);
     border-radius: 13%;
     text-align: center;
     align-content: center;
-    border: 1px solid rgb(195, 125, 70);
-    font-size: 3vw;
+    border: 1px solid var(--dark-brown);
+    font-size: calc(15px + 0.390625vw);
 }
 
 #messageArea {
@@ -88,7 +99,7 @@ main {
     grid-column-end: 5;
     grid-row-start: 4;
     text-align: center;
-    font-size: 3.5vw;
+    font-size: calc(15px + 0.390625vw);
 }
 
 
