@@ -9,21 +9,20 @@ html {
 }
 
 body {
+    display: flex;
+    height: 95vh;
+    width: 58vh;
     font-family: 'Original Surfer', sans-serif;
-    display: grid;
+    justify-content: center;
+    margin: 25px;
 }
 
 main {
-    aspect-ratio: 1.25;
+    aspect-ratio: 4/7;
     display: grid;
-    grid-template-columns: repeat(4, 20%);
-    grid-template-rows:
-            repeat(1, 10%);
-            repeat(4, 20%);
-            repeat(1, 10%)
-    grid-row-gap: 3%;
-    justify-content: center;
-    margin: 25px auto;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 16% 60% 10% 10%;
+    margin: 0;
 }
 
 #titleArea {
@@ -31,13 +30,12 @@ main {
     grid-column-start: 1;
     grid-column-end: 5;
     grid-row-start: 1;
-    margin: 2%;
     color: rgb(80, 115, 145);
     border-radius: 13%;
     background-color: rgb(60, 140, 150, 0.1);
     text-align: center;
     align-content: center;
-    font-size: 4vw;
+    font-size: 3.25vw;
 }
 
 #board {
@@ -49,6 +47,7 @@ main {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(4, 1fr);
+    justify-content: center;
 }
 
 .tile {
@@ -56,32 +55,20 @@ main {
     color: whitesmoke;
     background-color: rgb(110, 190, 175);
     border-radius: 13%;
-    margin: 3%;
     text-align: center;
     align-content: center;
     border: 1px solid rgb(195, 125, 70);
-    /*visibility: visible;*/
-    font-size: 3.5vw;
+    font-size: 7vw;
 }
 
 #infoArea {
     display: grid;
     grid-template-columns: repeat(3, 30%);
-    grid-template-rows: repeat(2, 100%);
     grid-column-gap: 5%;
     grid-column-start: 1;
     grid-column-end: 5;
-    grid-row-start: 11;
-}
-
-#messageArea {
-    display: grid;
-    grid-column-start: 1;
-    grid-column-end: 5;
-    grid-row-start: 2;
+    grid-row-start: 3;
     align-content: center;
-    text-align: center;
-    font-size: 3.5vw;
 }
 
 .button {
@@ -89,12 +76,19 @@ main {
     color: whitesmoke;
     background-color: rgb(80, 115, 145);
     border-radius: 13%;
-    margin: 3%;
     text-align: center;
     align-content: center;
     border: 1px solid rgb(195, 125, 70);
     font-size: 3vw;
 }
 
+#messageArea {
+    display: grid;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 4;
+    text-align: center;
+    font-size: 3.5vw;
+}
 
 
