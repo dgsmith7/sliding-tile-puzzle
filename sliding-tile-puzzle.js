@@ -1,11 +1,9 @@
 (function() {
+    "use strict";
 
-    let game = new Game();
-    let g2 = new miniGame();
-    console.log(g2.best);
-    console.log(g2.worst);
+    let game = new Game();  // instantiate game object
 
-    function connectButtons() {
+    function connectButtons() { // tie buttons to functions
         document.getElementById("topLeft").addEventListener("click", () => game.tryMove(0));
         document.getElementById("top1").addEventListener("click", () => game.tryMove(1));
         document.getElementById("top2").addEventListener("click", () => game.tryMove(2));
@@ -25,7 +23,7 @@
         document.getElementById("reset").addEventListener("click", () => game.reset());
     }
 
-    game.reset();
-    connectButtons();
+    game.reset();  // reset the game to start
+    connectButtons();  // tie buttons to functionality
 
 }());

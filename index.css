@@ -21,7 +21,7 @@ html {
 
 body {
     display: flex;
-    width: max(95vw, 576px);
+    width: max(95vw, 390px);
     height: max(95vh, 600px);
     font-family: 'Original Surfer', sans-serif;
     justify-content: center;
